@@ -5,7 +5,7 @@ import Todo from "./Todo"
 const TodoList = ({ todos, deleteTodo }) => (
     <ul>
         {todos.map(todo => 
-          <Todo key={todos.id} {...todo}  onClick={() => deleteTodo(todo.id)} />
+          <Todo key={todo.id} {...todo}  onClick={() => deleteTodo(todo.id)} />
         )}
     </ul>
 )

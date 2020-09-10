@@ -3,7 +3,7 @@ let nextTodoId = 0
 export const addTodo = text => ({
     type: "ADD_TODO",
     id: nextTodoId++,
-    payload: text
+    text
 })
 
 export const setVisibilityFilter = filter => ({
@@ -19,7 +19,7 @@ export const setVisibilityFilter = filter => ({
 
 export const deleteTodo = id => ({
     type: "DELETE_TODO",
-    payload: id
+    id
 })
 
 export const VisibilityFilters = {

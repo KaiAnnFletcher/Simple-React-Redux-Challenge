@@ -3,17 +3,18 @@
 const todos = (state = [], action) => {
      switch (action.type) {
         case  "ADD_TODO":
-            return {
+            return [
                 ...state,
-                    
-                    id: [...state.id, action.payload]
-                
+                {
+                    id: action.id,
+                    text: action.text   
             }
+            ]
         case "DELETE_TODO":
             return {
                 
-                id: [
-                   ...state.id.filter(id => id !== action.payload) 
+                ids: [
+                   ...state.ids.filter(id => id !== action.id) 
                 ]
             };
             default:
