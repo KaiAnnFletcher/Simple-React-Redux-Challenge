@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from "./Todo"
 
-const TodoList = ({ todos, deleteTodo }) => (
+const TodoList = ({ todos }) => (
     <ul>
         {todos.map(todo => 
-          <Todo key={todo.id} {...todo}  onClick={() => deleteTodo(todo.id)} />
+          <Todo key={todo.id} {...todo} />
         )}
+        
     </ul>
 )
 
@@ -17,7 +18,6 @@ todos: PropTypes.arrayOf(
         text: PropTypes.string.isRequired
     }).isRequired
 ).isRequired,
-deleteTodo: PropTypes.func.isRequired
 }
 
 export default TodoList

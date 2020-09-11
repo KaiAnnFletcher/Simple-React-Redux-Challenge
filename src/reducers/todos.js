@@ -13,8 +13,8 @@ const todos = (state = [], action) => {
         case "DELETE_TODO":
             return {
                 
-                ids: [
-                   ...state.ids.filter(id => id !== action.id) 
+                id: [
+                   ...state.filter(id => id !== action.id) 
                 ]
             };
             default:

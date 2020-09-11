@@ -1,17 +1,32 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+import { deleteTodo } from "../actions"
 
 
-const Todo = ({ text }) => {
+const Todo = ({ text, deleteTodo }) => {
     return(
-    
+    <div>
             <li>{text}</li>
-        
+            <button onClick={() => deleteTodo(text)}>Delete</button>
+            
+    </div>  
     );
 };
 
-Todo.propTypes = {
-    text: PropTypes.string.isRequired
+const mapDispatchToProps = dispatch => {
+ return {
+     deleteTodo: id => dispatch(deleteTodo(id))
+ }
 }
 
-export default Todo
+Todo.propTypes = {
+
+            text: PropTypes.string.isRequired,
+    
+    }
+
+export default connect(
+    null,
+    mapDispatchToProps
+) (Todo)
