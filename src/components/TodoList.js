@@ -17,7 +17,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => (
         }}
         >
 
-        <Todo
+        <Todo key={todo.id}
         {...todo}
         onClick={() => toggleTodo(todo.id)}
         />
