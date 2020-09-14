@@ -2,6 +2,7 @@
 import React from 'react'
 import Footer from './Footer'
 import AddTodo from '../containers/AddTodo'
+//import TodoList from './TodoList'
 import VisibleTodoList from '../containers/VisibleTodoList'
 import { Container, Row, Col } from "./Grid";
 
@@ -12,8 +13,10 @@ const App = () => (
   <Col size = "md-12">
   <h1 style={{textAlign: "center"}}>Redux Todo List!</h1>
   <div style={{textAlign: "center"}}>
-    <AddTodo />
-    <VisibleTodoList />
+    
+  <AddTodo />
+  {/* <TodoList /> */}
+  <VisibleTodoList />
     <Footer />
   </div>
   </Col>
