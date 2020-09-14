@@ -17,7 +17,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => (
         }}
         >
 
-        <Todo key={todo.id}
+        <Todo
         {...todo}
         onClick={() => toggleTodo(todo.id)}
         />
@@ -32,7 +32,7 @@ const TodoList = ({ todos, toggleTodo, deleteTodo }) => (
 
 TodoList.propTypes = {
     todos: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       completed: PropTypes.bool.isRequired,
       text: PropTypes.string.isRequired
     }).isRequired).isRequired,
